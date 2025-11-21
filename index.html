@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>François Raminosona - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background: #0b3041;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .hero-section .content {
+            cursor: default;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/012.jpg'); /* Using one of your photos */
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.4);
+            z-index: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .background-image.fade {
+            opacity: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(11, 48, 65, 0.5) 0%, rgba(33, 95, 154, 0.5) 100%);
+            z-index: 2;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        .name-title {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .navigation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-dot:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-dot:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+        .floating-dot:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
+        .floating-dot:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
+        .floating-dot:nth-child(5) { top: 10%; left: 60%; animation-delay: 3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .name-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .navigation-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .nav-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="background-image"></div>
+        <div class="overlay"></div>
+
+        <div class="floating-elements">
+            <div class="floating-dot"></div>
+            <div class="floating-dot"></div>
+            <div class="floating-dot"></div>
+            <div class="floating-dot"></div>
+            <div class="floating-dot"></div>
+        </div>
+
+        <div class="content">
+            <h1 class="name-title">François Raminosona</h1>
+            <p class="subtitle">Developer • Creator • Explorer</p>
+
+            <div class="navigation-grid">
+                <a href="https://gallery.francois.raminosona.com/" class="nav-card">
+                    <span class="card-icon">📸</span>
+                    <div class="card-title">Gallery</div>
+                    <div class="card-description">Photography portfolio organized by themes: Countries, Nature, Aurora, Sunsets, and more</div>
+                </a>
+
+                <a href="https://flights.francois.raminosona.com/" class="nav-card">
+                    <span class="card-icon">✈️</span>
+                    <div class="card-title">Flights</div>
+                    <div class="card-description">Interactive 3D visualization of personal flight history using Babylon.js and WebGL</div>
+                </a>
+
+                <a href="https://blog.francois.raminosona.com/" class="nav-card">
+                    <span class="card-icon">📝</span>
+                    <div class="card-title">Blog</div>
+                    <div class="card-description">Technical articles on .NET MAUI, mobile development, sensors, and programming tutorials</div>
+                </a>
+
+                <a href="https://resume.francois.raminosona.com/" class="nav-card">
+                    <span class="card-icon">💼</span>
+                    <div class="card-title">Resume</div>
+                    <div class="card-description">12+ years experience, featured projects, open-source contributions, and hackathon victories</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array of all available images
+        const images = [];
+        for (let i = 0; i < 25; i++) {
+            const imageNumber = i.toString().padStart(3, '0');
+            images.push(`images/${imageNumber}.jpg`);
+        }
+
+        let currentImageIndex = 12; // Starting with 012.jpg
+        const backgroundElement = document.querySelector('.background-image');
+        const heroSection = document.querySelector('.hero-section');
+        const content = document.querySelector('.content');
+
+        function getRandomImageIndex() {
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * images.length);
+            } while (newIndex === currentImageIndex); // Ensure we get a different image
+            return newIndex;
+        }
+
+        function changeBackground() {
+            const newIndex = getRandomImageIndex();
+            currentImageIndex = newIndex;
+
+            // Add fade effect
+            backgroundElement.classList.add('fade');
+
+            setTimeout(() => {
+                backgroundElement.style.backgroundImage = `url('${images[newIndex]}')`;
+                backgroundElement.classList.remove('fade');
+            }, 250); // Half of transition duration
+        }
+
+        // Add click event to hero section
+        heroSection.addEventListener('click', function(event) {
+            // Check if click is outside the content area (navigation cards)
+            if (!content.contains(event.target)) {
+                changeBackground();
+            }
+        });
+
+        // Prevent navigation card clicks from changing background
+        content.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>
