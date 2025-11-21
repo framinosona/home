@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://francois.raminosona.com/sitemap.xml
+
+# Block access to admin or private directories if any exist
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all crawlers to index images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Crawl delay (optional - use if needed to prevent server overload)
+# Crawl-delay: 1

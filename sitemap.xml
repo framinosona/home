@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Main Portfolio Homepage -->
+    <url>
+        <loc>https://francois.raminosona.com/</loc>
+        <lastmod>2025-11-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+
+        <!-- Featured Images for Social Sharing -->
+        <image:image>
+            <image:loc>https://francois.raminosona.com/images/012.jpg</image:loc>
+            <image:caption>François Raminosona - Developer, Creator, Explorer</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://francois.raminosona.com/images/000.jpg</image:loc>
+            <image:caption>François Raminosona Portfolio Background</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://francois.raminosona.com/images/001.jpg</image:loc>
+            <image:caption>François Raminosona Portfolio Background</image:caption>
+        </image:image>
+    </url>
+
+    <!-- External Portfolio Sections (for reference) -->
+    <!-- Gallery -->
+    <url>
+        <loc>https://gallery.francois.raminosona.com/</loc>
+        <lastmod>2025-11-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Flights Visualization -->
+    <url>
+        <loc>https://flights.francois.raminosona.com/</loc>
+        <lastmod>2025-11-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Technical Blog -->
+    <url>
+        <loc>https://blog.francois.raminosona.com/</loc>
+        <lastmod>2025-11-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Professional Resume -->
+    <url>
+        <loc>https://resume.francois.raminosona.com/</loc>
+        <lastmod>2025-11-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>
